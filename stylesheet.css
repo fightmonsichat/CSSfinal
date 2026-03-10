@@ -1,0 +1,220 @@
+/*Global styling*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url("https://images.template.net/356848/White-Cloud-Background-Aesthetic-edit-online-2.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#Logo {
+    width: 120px;
+    height: 120px;
+    float: left;
+    margin-left: 40px;
+    margin-top: -20px;
+}
+
+/*To remove bullet point for all element in a big list ul
+and set the menu bar selection in the middle of the page with text-align: center;
+*/
+.nav-links {
+    list-style: none;
+    background: rgb(180, 207, 223);
+    text-align: center;
+}
+
+/*Styling for the navigation bar to align items horizontally.
+1. img scr
+2. Home
+3. About
+4. Services
+5. Contact
+*/
+.nav-links li {
+    display: inline-block;
+    position: relative;
+}
+
+/*Styling for 1. img scr 2. Home  3. About 4. Services 5. Contact because we only call ul>li>a. Dropdown links will not be included, because it is in the specific ul>li>ul>a*/
+.nav-links li a {
+    display: block;
+    padding: 15px 70px 15px 70px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 50px;
+}
+
+/*With these 2 consecutive stlying commands -> All Menu is aligned on the same line, with no display of the dropdown content
+
+z-index: 999; + position: absolute/relative/fixed/sticky or flexible 
+-> 999 is a very high value to ensure that the dropdown content will be on top of other elements when it is displayed.
+-> To make sure the dropdown content is on top of other elements when it is displayed
+*/
+.nav-links li ul.dropdown-content li {
+    display: block;
+}
+
+.nav-links li ul.dropdown-content {
+    width: 100%;
+    background: rgb(235, 202, 163);
+    position: absolute;
+    z-index: 999;
+    display: none;
+    text-align: left;
+    font-size: 1em;
+}
+
+/*a copy of dropdown-content*/
+.nav-links li ul.service-content {
+    width: 100%;
+    background: rgb(235, 202, 163);
+    position: absolute;
+    z-index: 999;
+    display: none;
+    text-align: left;
+    font-size: 1em;
+}
+
+/*Hovering setup*/
+/*
+Display background color when hovering on to Home About Services Contact.
+*/
+.nav-links li a:hover {
+    background-color: rgb(255, 230, 198);
+}
+
+/*
+Hover at nav.links>li but have to display ul contents (dropdown content) when hovering on to Home About Services Contact.
+*/
+.nav-links li:hover ul.dropdown-content {
+    display: block;
+}
+
+.nav-links li:hover ul.service-content {
+    display: block;
+}
+
+/*----------------THE END OF MAIN TAB---------------------*/
+
+/*----------------START LEFT SIDE BAR---------------------*/
+/*
+With this below, it will create a sidebar on the left
+which is fixed. This sidebar will cover the content in the middle, if you are not careful. So you have to setup the content area too!!
+*/
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: rgb(193, 218, 213);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+/*
+Arrage all links in the left sidebar display as blocks*/
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 15px;
+    font-size: 1.3em;
+}
+
+/*Active/current link*/
+.sidebar a.active {
+    background-color: rgb(251, 129, 115);
+    color: rgb(2, 28, 53);
+}
+
+/*Hovering mouse effect, but exclude the active link*/
+.sidebar a:hover:not(.active) {
+    background-color: rgb(114, 139, 154);
+    color: whitesmoke;
+}
+
+/*On screens that are less than 700px wide, make the sidebar into a topbar
+*/
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    /*with this 2 small functions: it when the window is resized (less than 700px) It will rearrange horizontally instead of keeping it Page 1 Page 2 Page 3 vertically*/
+    .sidebar a {
+        float: left;
+    }
+
+    div.content1 {
+        margin-left: 0;
+    }
+
+    div.PhotoGal {
+        margin-left: 0;
+    }
+
+}
+
+/*-------------Area of the main area 1---------------------*/
+
+/*This is the styling for the main content area*/
+div.content1 {
+    margin-left: 250px;
+    padding: 1em 0em 0em 1em;
+}
+
+/*-------------Area of the main area 2---------------------*/
+
+div.PhotoGal {
+    margin-left: 250px;
+    padding: 1em 0em 0em 1em;
+}
+
+/*Gallery container
+Justify content = x axis
+align content = y axis
+*/
+div.GalleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.GalleryItem div.desc {
+    padding: 15px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+div.GalleryItem {
+    margin: 5 px;
+    border: 1px solid #9e9e9e;
+    border-radius: 15px;
+}
+
+div.GalleryItem:hover {
+    border: 1px solid #020202;
+    border-radius: 15px;
+}
+
+/*-------------Area of the main area 3---------------------*/
+div.content3 {
+    margin-left: 250px;
+    padding: 1em 0em 0em 1em;
+    font-size: 1.5em;
+}
+
+footer {
+    margin-left: 250px;
+    padding: 1em 0em 0em 1em;
+}
